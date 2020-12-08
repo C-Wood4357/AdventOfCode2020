@@ -6,6 +6,7 @@ with open("input.txt") as f:
 identify_bag = re.compile(r"([0-9]?) *([a-z]*)? ([a-z]*)? bag[s]?")
 bag_dict = {}
 
+# Interesting bug here, can you see why I was ending up with 'No Key' errors for bags containing no other bags?
 for j in bag_list:
     key_bag = ""
     child_bags = []
@@ -28,6 +29,7 @@ def gold_mine(bag):
     )
 
 
+print(bag_dict)
 print(
     """
                ,---.          _,---.          ,--.--------.                       ,---.                   
