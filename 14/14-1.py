@@ -16,14 +16,14 @@ values = list(
 )
 
 mem_addr = re.compile(r"\[([^]]+)\]")
-
 curr_mask = ""
 memory = {}
+
 for op, value in values:
     if op == "mask":
         curr_mask = value
     elif op.startswith("mem"):
-        address = re.search(mem_addr, op)
+        address = re.search(mem_addr, op)[1]
         bit_value = (format(int(value), "b")).rjust(36, "0")
         new_value = ""
         for i in range(len(curr_mask)):

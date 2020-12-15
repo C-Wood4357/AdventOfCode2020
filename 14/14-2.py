@@ -61,6 +61,4 @@ for op, value in values:
         for i in address_list:
             memory[i] = int(value)
 
-# print(memory)
-
 print(sum(memory.values()))
